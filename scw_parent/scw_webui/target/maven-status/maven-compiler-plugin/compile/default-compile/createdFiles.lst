@@ -1,0 +1,8 @@
+com\offcn\webui\config\FeignConfig.class
+com\offcn\webui\vo\resp\ProjectVo.class
+com\offcn\webui\config\AppWebMvcConfig.class
+com\offcn\webui\vo\resp\UserRespVo.class
+com\offcn\webui\service\UserServiceFeign.class
+com\offcn\webui\service\impl\UserServiceFeignException.class
+com\offcn\webui\WebUiStart.class
+com\offcn\webui\controller\DispathcherController.class

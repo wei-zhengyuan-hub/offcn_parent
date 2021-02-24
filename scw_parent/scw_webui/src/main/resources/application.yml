@@ -1,0 +1,50 @@
+server:
+  port: 10000
+#数据库
+spring:
+  application:
+    name: ScwWebui
+  #Redis
+  redis:
+    host: 192.168.188.128
+    port: 6379
+  #thymeleaf
+  thymeleaf:
+    cache: false #禁用模板缓存
+    suffix: .html #构建url时附加到查看名称的后缀
+    prefix: classpath:/templates/ #在构建url时，预先查看名称的前缀
+  #session
+  session:
+    store-type: redis #session存储方式
+    timeout: 1800 #session过期时间  单位：秒
+#eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+#日志
+logging:
+  file:
+    path: E:\\logs\\scw_webui
+  level:
+    com:
+      offcn: debug
+feign:
+  hystrix:
+    enabled: true  #开启Feign的熔断功能
+  client:
+    config:
+      default:
+        connectTimeout: 2000  #连接超时时间2秒
+        readTimeout: 2000     #读超时时间2秒
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000 #设置熔断时间10秒
+
+
